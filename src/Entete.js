@@ -1,9 +1,9 @@
-import './Entete.css';
+import './Entete.scss';
 
 export default function Entete() {
     return (
         <header className="Entete">
-            <div className="logo">
+            <div className="logo">Magasin</div>
                 <ul className="navPrincipale">
                     <li>Produits</li>
                     <li>À propos de nous</li>
@@ -13,7 +13,7 @@ export default function Entete() {
                     <li>Panier d'achats</li>
                     <li>Mon compte</li>
                 </ul>
-            </div>
+            
         </header>
     )
 }
