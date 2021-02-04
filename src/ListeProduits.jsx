@@ -8,7 +8,7 @@ export default function ListeProduits() {
       <h2>Produits disponibles</h2>
       <ul className="ListeProduits">
         {tabProduits.map((produit) => (
-          <Produit nom={produit.nom} prix={produit.prix} id={produit.id} />
+          <Produit key={produit.id} nom={produit.nom} prix={produit.prix} id={produit.id} />
         ))}
       </ul>
     </>
