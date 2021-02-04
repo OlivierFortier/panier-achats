@@ -1,13 +1,15 @@
-import './ListeProduits.css';
-import Produit from './Produit';
+import "./ListeProduits.css";
+import Produit from "./Produit";
+import tabProduits from "./data/produits.json";
 
 export default function ListeProduits() {
   return (
     <>
       <h2>Produits disponibles</h2>
       <ul className="ListeProduits">
-        <Produit nom="T-Shirt col rond" prix="19.99" id="prd0004"/>
-        <Produit nom="Chandail à manche longue" prix="25.50" id="prd0002"/>
+        {tabProduits.map((produit) => (
+          <Produit nom={produit.nom} prix={produit.prix} id={produit.id} />
+        ))}
       </ul>
     </>
   );
