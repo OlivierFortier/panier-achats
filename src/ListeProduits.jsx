@@ -1,16 +1,16 @@
-import "./ListeProduits.scss";
+import './ListeProduits.scss';
 import Produit from "./Produit";
-import tabProduits from "./data/produits.json";
+import tabProduits from './data/produits.json';
 
 export default function ListeProduits() {
   return (
-    <>
+    <div className="ListeProduits">
       <h2>Produits disponibles</h2>
-      <ul className="ListeProduits">
-        {tabProduits.map(produit => (
-          <Produit key={produit.id} nom={produit.nom} prix={produit.prix} id={produit.id} />
-        ))}
+      <ul>  
+        {tabProduits.map(prd => 
+         <Produit key={prd.id} nom={prd.nom} prix={prd.prix} id={prd.id} />
+        )}
       </ul>
-    </>
+    </div>
   );
 }

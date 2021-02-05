@@ -1,16 +1,16 @@
 import './Appli.scss';
-import Entete from './Entete';
+import Entete from './Entete.jsx';
 import ListeProduits from './ListeProduits';
 import PiedDePage from './PiedDePage';
 
 function Appli() {
   return (
     <div className="Appli">
-     <Entete/>
+      <Entete />
       <section className="contenuPrincipal">
-        <ListeProduits/>
+        <ListeProduits />
       </section>
-      <PiedDePage/>
+      <PiedDePage />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import "./Entete.scss";
 
-export default function Entete() {
+function Entete(props) {
   return (
     <header className="Entete">
       <div className="logo">Magasin</div>
@@ -16,3 +16,5 @@ export default function Entete() {
     </header>
   );
 }
+
+export default Entete;
