@@ -1,14 +1,15 @@
-import './Produit.css';
+import BtnAjoutPanier from './BtnAjoutPanier';
+import './Produit.scss';
 
-export default function Produit({nom, prix, id}) {
+export default function Produit(props) {
   return(
-    <li>
-      <img src={`images-produits/${id}.webp`} alt=""/>
+    <li className="Produit">
+      <img src={'images-produits/' + props.id + '.webp'} alt=""/>
       <div className="info">
-        <p className="nom">{nom}</p>
-        <p className="prix">{prix}</p>
+        <p className="nom">{props.nom}</p>
+        <p className="prix">{props.prix}</p>
       </div>
-      <button>Ajouter au panier</button>
+      <BtnAjoutPanier />
     </li>
   );
 }
