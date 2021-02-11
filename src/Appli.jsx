@@ -7,17 +7,12 @@ import PiedDePage from './PiedDePage';
 export default function Appli() {
  
   const etatPanier = useState({});
-  
-  const panier = etatPanier[0];
-  const setPanier = etatPanier[1];
-
-  const [connexion, setConnexion] = useState(false); // Destructuring Arrays
 
   return (
     <div className="Appli">
-      <Entete />
+      <Entete etatPanier={etatPanier}/>
       <section className="contenuPrincipal">
-        <ListeProduits />
+        <ListeProduits etatPanier={etatPanier} />
       </section>
       <PiedDePage />
     </div>

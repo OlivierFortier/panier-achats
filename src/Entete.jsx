@@ -3,6 +3,11 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 
 function Entete(props) {
+
+  const [panier,setPanier] = props.etatPanier;
+
+  const qteAccumuler = Object.values(panier).reduce((total,acc) => total + acc.qte, 0);
+
   return (
     <header className="Entete">
       <div className="logo">Magasin</div>
@@ -13,9 +18,12 @@ function Entete(props) {
       </ul>
       <ul className="navUtilisateur">
         <li>
-          <Badge badgeContent={2} color="secondary">
+          <Badge badgeContent={qteAccumuler} color="secondary">
             <ShoppingCartIcon />
           </Badge>
+          <div className="sommairePanier">
+            lalala
+          </div>
         </li>
         <li>Mon compte</li>
       </ul>
