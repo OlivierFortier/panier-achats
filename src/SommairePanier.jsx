@@ -32,6 +32,8 @@ function retournerInfoPanier(pan) {
     info.totalItems = tabArticles.reduce((leTotal, article) => leTotal + article.qte ,0)
     const st = tabArticles.reduce((leTotal,article)=> leTotal + (article.prix * article.qte) ,0);
     info.st = st.toFixed(2);
+    const tps = st * 0.05;
+    info.tps = tps.toFixed(2);
 
     return info;
 }
