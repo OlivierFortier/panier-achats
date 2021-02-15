@@ -19,7 +19,7 @@ export default function Appli() {
   
 
   useEffect(() => {
-    window.localStorage.setItem("panier", JSON.stringify(etatPanier[0]));
+    window.localStorage.setItem("panier", JSON.stringify(panier));
   }, [panier]);
 
   return (
