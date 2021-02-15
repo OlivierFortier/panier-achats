@@ -8,8 +8,8 @@ export default function Produit(props) {
   const {prix, id} = props;
 
   function ajoutPanier() {
-    if(panier[props.id]) {
-      panier[props.id].qte++;
+    if(panier[id]) {
+      panier[id].qte++;
     }
     else {
      panier[id] = {prix: prix, qte: 1};

@@ -1,12 +1,20 @@
 import './Entete.scss';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import SommairePanier from './SommairePanier';
+import {useState} from 'react';
 
 function Entete(props) {
 
   const [panier,setPanier] = props.etatPanier;
 
   const qteAccumuler = Object.values(panier).reduce((total,acc) => total + acc.qte, 0);
+
+  const [sommaireAffichable, setSommaireAffichable] = useState(false);
+
+  function basculerAffichageSommairePanier() {
+    setSommaireAffichable(!sommaireAffichable);
+  }
 
   return (
     <header className="Entete">
@@ -18,12 +26,10 @@ function Entete(props) {
       </ul>
       <ul className="navUtilisateur">
         <li>
-          <Badge badgeContent={qteAccumuler} color="secondary">
+          <Badge onClick={basculerAffichageSommairePanier} badgeContent={qteAccumuler} color="secondary">
             <ShoppingCartIcon />
           </Badge>
-          <div className="sommairePanier">
-            lalala
-          </div>
+          <SommairePanier etatPanier={panier} affichable={sommaireAffichable}/>
         </li>
         <li>Mon compte</li>
       </ul>
