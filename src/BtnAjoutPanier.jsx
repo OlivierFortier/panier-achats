@@ -1,6 +1,7 @@
 import { Badge } from "@material-ui/core";
 import { useState } from "react";
 import "./BtnAjoutPanier.scss";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 export default function BtnAjoutPanier(props) {
   const [texte, setTexte] = useState("Ajouter au panier");
@@ -11,7 +12,7 @@ export default function BtnAjoutPanier(props) {
       <button
         onClick={() => {
           props.onClick();
-          setTexte("Augmenter");
+          setTexte(<AddShoppingCartIcon/>);
           setQte(qte + 1);
         }}
         className="BtnAjoutPanier"
