@@ -15,7 +15,7 @@ export default function BtnAjoutPanier(props) {
           setTexte(<AddShoppingCartIcon/>);
           setQte(qte + 1);
         }}
-        className="BtnAjoutPanier"
+        className={`BtnAjoutPanier ${qte > 0 && 'rouge'}`}
       >
         {texte}
       </button>
