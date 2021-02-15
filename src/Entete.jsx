@@ -29,7 +29,7 @@ function Entete(props) {
           <Badge onClick={basculerAffichageSommairePanier} badgeContent={qteAccumuler} color="secondary">
             <ShoppingCartIcon />
           </Badge>
-          <SommairePanier etatPanier={panier} affichable={sommaireAffichable}/>
+          <SommairePanier panier={panier} affichable={sommaireAffichable}/>
         </li>
         <li>Mon compte</li>
       </ul>
