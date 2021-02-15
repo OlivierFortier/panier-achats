@@ -34,6 +34,9 @@ function retournerInfoPanier(pan) {
     info.st = st.toFixed(2);
     const tps = st * 0.05;
     info.tps = tps.toFixed(2);
+    const tvq = st * 0.09975;
+    info.tvq = tvq.toFixed(2);
+    info.total = (st + tps + tvq).toFixed(2);
 
     return info;
 }
