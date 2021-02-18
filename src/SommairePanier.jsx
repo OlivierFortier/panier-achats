@@ -3,7 +3,6 @@ import './SommairePanier.scss';
 export default function SommairePanier({panier , affichable}) {
 
     const info = retournerInfoPanier(panier);
-    console.log(panier)
 
     return (
         <div className={`SommairePanier ${!affichable && 'cacher'}`}>
@@ -18,7 +17,6 @@ export default function SommairePanier({panier , affichable}) {
 }
 
 function retournerInfoPanier(pan) {
-    // console.log(pan)
     const tabArticles = Object.values(pan);
     let info = {
         nbArticles: 0,
