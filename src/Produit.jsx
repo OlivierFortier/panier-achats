@@ -1,11 +1,9 @@
 import BtnAjoutPanier from './BtnAjoutPanier';
 import './Produit.scss';
 
-export default function Produit(props) {
+export default function Produit({prix, id, etatPanier, nom}) {
 
-  const [panier, setPanier] = props.etatPanier;
-
-  const {prix, id} = props;
+  const [panier, setPanier] = etatPanier;
 
   function ajoutPanier() {
     if(panier[id]) {
@@ -19,10 +17,10 @@ export default function Produit(props) {
 
   return(
     <li className="Produit">
-      <img src={'images-produits/' + props.id + '.webp'} alt=""/>
+      <img src={'images-produits/' + id + '.webp'} alt=""/>
       <div className="info">
-        <p className="nom">{props.nom}</p>
-        <p className="prix">{props.prix}</p>
+        <p className="nom">{nom}</p>
+        <p className="prix">{prix}</p>
       </div>
       <BtnAjoutPanier onClick={ajoutPanier} />
     </li>
