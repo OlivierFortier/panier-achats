@@ -1,5 +1,6 @@
 import BtnAjoutPanier from './BtnAjoutPanier';
 import './Produit.scss';
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 export default function Produit({prix, id, etatPanier, nom}) {
 
@@ -10,7 +11,7 @@ export default function Produit({prix, id, etatPanier, nom}) {
       panier[id].qte++;
     }
     else {
-     panier[id] = {prix: prix, qte: 1};
+     panier[id] = {nom: nom, prix: prix, qte: 1};
     }
     setPanier({...panier});
   }
@@ -22,7 +23,7 @@ export default function Produit({prix, id, etatPanier, nom}) {
         <p className="nom">{nom}</p>
         <p className="prix">{prix}</p>
       </div>
-      <BtnAjoutPanier onClick={ajoutPanier} />
+      <BtnAjoutPanier onClick={ajoutPanier} qte={panier[id]?.qte || 0} texte={panier[id]?.qte > 0 ? <AddShoppingCartIcon/> : 'Ajouter au panier'} />
     </li>
   );
 }
