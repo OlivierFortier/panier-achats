@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 function Entete(props) {
 
-  const [panier,setPanier] = props.etatPanier;
+  const [panier] = props.etatPanier;
 
   const qteAccumuler = Object.values(panier).reduce((total,acc) => total + acc.qte, 0);
 

@@ -6,17 +6,10 @@ import PiedDePage from "./PiedDePage";
 
 export default function Appli() {
   const etatPanier = useState(() => {
-    let panierDansLS = window.localStorage.getItem("panier");
-    if (panierDansLS !== null) {
-      return JSON.parse(panierDansLS);
-    } else {
-      return {};
-    }
+    return JSON.parse(window?.localStorage?.getItem("panier")) || {};
   });
 
   const [panier] = etatPanier;
-
-  
 
   useEffect(() => {
     window.localStorage.setItem("panier", JSON.stringify(panier));
