@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-export default function usePersistState(valeurInitiale, etiquetteLS) {
+export default function useLocalStorageState(valeurInitiale, etiquetteLS) {
 
     const [valeur, setValeur] = useState(() => {
         return JSON.parse(window?.localStorage?.getItem(etiquetteLS)) || valeurInitiale;

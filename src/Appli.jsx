@@ -2,12 +2,12 @@ import './Appli.scss';
 import Entete from './Entete.jsx';
 import ListeProduits from './ListeProduits';
 import PiedDePage from './PiedDePage';
-import usePersistState from './hooks/usePersistState';
+import useLocalStorageState from './hooks/useLocalStorageState';
 
 export default function Appli() {
   
 
-  const etatPanier = usePersistState({} , "panier");
+  const etatPanier = useLocalStorageState({} , "panier");
 
   return (
     <div className="Appli">
