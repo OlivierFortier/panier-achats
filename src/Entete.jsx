@@ -4,9 +4,9 @@ import Badge from '@material-ui/core/Badge';
 import SommairePanier from './SommairePanier';
 import {useState} from 'react';
 
-function Entete(props) {
+function Entete({etatPanier}) {
 
-  const [panier] = props.etatPanier;
+  const [panier] = etatPanier;
 
   const qteAccumuler = Object.values(panier).reduce((total,acc) => total + acc.qte, 0);
 
