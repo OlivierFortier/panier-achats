@@ -14,8 +14,7 @@ const firebaseConfig = {
   appId: "1:705844162303:web:f92863b5cc0e360a61a6ca",
 };
 //awdawdaw
-if(!fbAppli.apps[0])
-{
+if (!fbAppli.apps[0]) {
   fbAppli.initializeApp(firebaseConfig);
 }
 
@@ -25,11 +24,23 @@ const bd = fbAppli.firestore();
 //  (produit) => bd.collection("produits").add(produit)
 // )
 
-bd.collection("produits").where("prix", ">", 13).get().then(reponse => {
-  reponse.forEach(produit => {
-    console.log(produit.data())
-  })
-})
+bd.collection("produits")
+  .get()
+  .then((reponse) => {
+    reponse.forEach((produit) => {
+      console.log(produit.data());
+    });
+  });
+
+let observerProduits = bd
+  .collection("produits")
+  .onSnapshot((vue) =>
+    vue.docChanges().forEach(changement => {
+      if(changement.type === "added") {
+        console.log(changement.doc.data());
+      }
+    })
+  );
 
 export default function ListeProduits({ etatPanier }) {
   return (
